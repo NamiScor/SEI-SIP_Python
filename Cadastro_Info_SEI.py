@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 driver = webdriver.Edge()
 driver.maximize_window()    
-driver.get('https://sip')
+driver.get('https://sei')
 time.sleep(2)
 
 # processo de login
@@ -119,3 +119,4 @@ driver.quit()
 
 
 # COMPLETO
+
