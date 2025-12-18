@@ -1,7 +1,7 @@
-# Automação para a crição de novos usuários ainda nao existentes no SIP, 
-# Com uma base de dados dos usuários, já formatada para essa auto, e seus registros para o preenchimento dos dados necessários para o cadastro.
 # <...EXPLICAÇÃO DO CÓDIGO...>
 # PARTE 1
+# Automação REFERENTE a para a crição de novos usuários ainda nao existentes no SIP.
+# Com uma base de dados dos usuários com dados pessoais, já formatada para essa auto haverá o preenchimento desses dados necessários para o cadastro.
 # Em primeira instância a biblioteca usada (Selenium) irá pesquisar se o usuário da base já existe na base de dados do SIP,
 # se já houver esse registro, dará continuidade até encontrar algum que não esteja registrado,
 # logo, se não houver essa situação irá ser criado um novo cadastro para este usuário.
@@ -91,5 +91,6 @@ for linha in dbu.index:
 print('Operação FINALIZADA...')
 
 driver.quit()
+
 
 
