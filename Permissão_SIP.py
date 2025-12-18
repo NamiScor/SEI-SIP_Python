@@ -1,4 +1,6 @@
-# Automação para permissões no SIP
+# <...EXPLICAÇÃO DO CÓDIGO...>
+# PARTE 2
+# Automação referente as permissões no SIP para a liberação do usuário no SEI
 import time
 import pandas as pd 
 import pyautogui as py
@@ -93,3 +95,4 @@ driver.quit()
 
 
 # COMPLETO
+
