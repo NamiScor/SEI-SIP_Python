@@ -9,12 +9,12 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 driver = webdriver.Edge()
 driver.maximize_window()    
-driver.get('https://sip-treinamento.treslagoas.ms.gov.br/sip/login.php?sigla_orgao_sistema=PMTL&sigla_sistema=SEI')
+driver.get('https://sip')
 time.sleep(2)
 
 # processo de login
-driver.find_element(By.ID, "txtUsuario").send_keys("yasmim.silva")
-driver.find_element(By.ID, "pwdSenha").send_keys("PMTL@2020")
+driver.find_element(By.ID, "txtUsuario").send_keys("  ")
+driver.find_element(By.ID, "pwdSenha").send_keys("  ")
 driver.find_element(By.ID, "selOrgao").click()
 time.sleep(1)
 py.press('down')
@@ -33,7 +33,7 @@ driver.find_element(By.XPATH, '//*[@id="selOrgao"]/option[4]').click()
 time.sleep(1)
 
 wait=webdriver.support.ui.WebDriverWait(driver, 10)
-db = pd.read_excel("         .xlsx", dtype={"Matrícula": str})
+db = pd.read_excel("  .xlsx", dtype={"Matrícula": str})
 
 for linha in db.index:  
     camp_name = db.loc[linha, "Nome"]
@@ -43,7 +43,7 @@ for linha in db.index:
 
     # condição da célula estar vazia
     if pd.isna(camp_name) or str(camp_name).strip() == "":
-        print('automação encerrada')
+        print('automação ENCERRADA')
         driver.quit()
         exit()  
 
@@ -114,7 +114,8 @@ for linha in db.index:
 
     print(f'Usuário {camp_name} preenchido!')
     
-print(f'Operação finalizada com sucesso!')
+print(f'Operação FINALIZADA com sucesso!')
 driver.quit()
+
 
 # COMPLETO
