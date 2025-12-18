@@ -11,12 +11,12 @@ from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Edge()
 driver.maximize_window()  
-driver.get('https://sip-treinamento.treslagoas.ms.gov.br/sip/login.php?sigla_orgao_sistema=PMTL&sigla_sistema=SIP')
+driver.get('https://sip')
 time.sleep(2)
 
 # processo de login
-driver.find_element(By.ID, "txtUsuario").send_keys("yasmim.silva")
-driver.find_element(By.ID, "pwdSenha").send_keys("PMTL@2020")
+driver.find_element(By.ID, "txtUsuario").send_keys("  ")
+driver.find_element(By.ID, "pwdSenha").send_keys("  ")
 driver.find_element(By.ID, "selOrgao").click()
 time.sleep(1)
 py.press('down')
@@ -24,7 +24,7 @@ driver.find_element(By.ID, "sbmAcessar").click()
 time.sleep(2)
 
 wait = WebDriverWait(driver, 10)
-dbu = pd.read_excel("        .xlsx", dtype={"Matrícula": str})
+dbu = pd.read_excel("  .xlsx", dtype={"Matrícula": str})
 
 # Navegação até a tela permissão de usuários, IMPORTANTE deixar os times para processar cada comando e conseguir executá-los
 driver.find_element(By.ID, "linkMenu24").click()
@@ -51,7 +51,7 @@ for linha in dbu.index:
 
     # condição da célula estar vazia na planilha
     if pd.isna(nome) or str(nome).strip() == "":
-        print('automação encerrada')
+        print('automação ENCERRADA')
         break
 
     campo = wait.until(EC.element_to_be_clickable((By.ID, "txtUsuario")))
@@ -72,7 +72,7 @@ for linha in dbu.index:
         continue 
 
     except TimeoutException:
-        # Se não encontrou nenhuma linha na tela de pesquisa = "Nenhum registro encontrado"
+        # Se não encontrou nenhuma linha na tela de pesquisa com o texto: "Nenhum registro encontrado"
         driver.find_element(By.ID, "btnNova").click()
         time.sleep(1)
 
@@ -88,7 +88,8 @@ for linha in dbu.index:
         driver.find_element(By.NAME, "sbmCadastrarPermissao").click()
         print(f'{nome} foi permissionada: {div}')
         time.sleep(1)
-print('Operação finalizada...')
+print('Operação FINALIZADA...')
 driver.quit()
+
 
 # COMPLETO
