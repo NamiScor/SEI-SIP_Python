@@ -1,4 +1,8 @@
 # Automação para cadastro de informações pessoais do usuário no SEI, com permissão já consedida no SIP
+# <...EXPLICAÇÃO DO CÓDIGO...>
+# PARTE 3 (FINAL)
+# Após ser criado ou não os usuários (ETAPA 1), e permissionados para aparecer seu registro no SEI através da permissão obrigatória do SIP para o SEI (ETAPA 2),
+# assim, será preciso preencher os dados dessess para ficar registrado em seu cadastro no sistema e ser dispobilizado tal para realizar alguma operação dentro do sistema.
 import time
 import pandas as pd 
 import pyautogui as py
@@ -75,7 +79,7 @@ for linha in db.index:
     # Troca o foco para dentro do iframe
     driver.switch_to.frame(iframe)
 
-    # Agora você pode acessar o CPF e Matrícula
+    # Agora você pode acessar os campos do CPF e Matrícula para preenche-los
     cpf_input = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "txtCpf")))
     cpf_input.clear()
     cpf_input.send_keys(camp_cpf)
@@ -88,6 +92,7 @@ for linha in db.index:
     btn_topo.click()
     time.sleep(1)
 
+    # Para o cadastro é preciso definir o gênero do usuário, conforme os dados dos usuários na base
     if camp_sexo == "F":
         label_fem = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "label[for='optFeminino']")))
         label_fem.click()
@@ -118,3 +123,4 @@ print(f'Operação FINALIZADA...')
 driver.quit()
 
 # COMPLETO
+
