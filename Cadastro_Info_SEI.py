@@ -1,6 +1,6 @@
-# Automação para cadastro de informações pessoais do usuário no SEI, com permissão já consedida no SIP
 # <...EXPLICAÇÃO DO CÓDIGO...>
 # PARTE 3 (FINAL)
+# Automação para cadastro de informações pessoais do usuário no SEI, com permissão já consedida no SIP
 # Após ser criado ou não os usuários (ETAPA 1), e permissionados para aparecer seu registro no SEI através da permissão obrigatória do SIP para o SEI (ETAPA 2),
 # assim, será preciso preencher os dados dessess para ficar registrado em seu cadastro no sistema e ser dispobilizado tal para realizar alguma operação dentro do sistema.
 import time
@@ -123,4 +123,5 @@ print(f'Operação FINALIZADA...')
 driver.quit()
 
 # COMPLETO
+
 
