@@ -62,7 +62,7 @@ for linha in dbu.index:
 
     except TimeoutException:
         # criação de um novo usuário no SIP
-        print(f'Usuário {nome} NÃO EXISTE --> prosseguindo CADASTRANDO...')    
+        display (f'Usuário {nome} NÃO EXISTE --> prosseguindo CADASTRANDO...')    
         driver.find_element(By.ID, "btnNovo").click()
         time.sleep(1)
 
@@ -85,12 +85,11 @@ for linha in dbu.index:
         time.sleep(1)
 
         driver.find_element(By.NAME,'sbmCadastrarUsuario').click()
-        print(f'Usuário {nome} CRIADO, possui a silga: {sigla}')
+        display(f'Usuário {nome} CRIADO, possui a silga: {sigla}')
         time.sleep(1)
 
 print('Operação FINALIZADA...')
 
 driver.quit()
 
-
-
+# COMPLETO

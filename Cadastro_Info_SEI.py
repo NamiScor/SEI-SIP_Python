@@ -123,5 +123,3 @@ print(f'Operação FINALIZADA...')
 driver.quit()
 
 # COMPLETO
-
-

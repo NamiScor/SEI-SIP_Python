@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import Select
+from IPython.display import display
 
 driver = webdriver.Edge()
 driver.maximize_window()  
@@ -68,7 +69,7 @@ for linha in dbu.index:
     try:
         # Tenta localizar a tabela de permissões (se houver resultados)
         wait.until(EC.presence_of_element_located((By.XPATH, "//table[@class='infraTable']//tr[td]")))
-        print(f"Usuário {nome} já possui permissões na {div}")
+        display (f"Usuário {nome} já possui permissões na {div}")
         driver.find_element(By.ID, "txtUsuario").click()
         driver.find_element(By.ID, "txtUsuario").clear()
         continue 
@@ -95,4 +96,3 @@ driver.quit()
 
 
 # COMPLETO
-
